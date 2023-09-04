@@ -18,6 +18,8 @@ const slides = [
   },
 ];
 
+let slideIndex = 0;
+
 document.getElementById("left").addEventListener("click", () => {
   if (slideIndex == 0) {
     slideIndex = slides.length - 1;
@@ -67,8 +69,6 @@ function dotsNumbers() {
   }
 }
 
-let slideIndex = 0;
-
 function slideElements() {
   const image = document.getElementsByClassName("banner-img")[0];
   image.src = "./assets/images/slideshow/" + slides[slideIndex].image;
@@ -77,6 +77,4 @@ function slideElements() {
   text.innerHTML = slides[slideIndex].tagLine;
 }
 
-window.addEventListener("load", () => {
-  dotsNumbers();
-});
+dotsNumbers();
